@@ -33,3 +33,5 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+require_once __DIR__ . '/jetstream.php';
