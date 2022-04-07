@@ -1,6 +1,8 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Jetstream/Welcome.vue';
+import SimpleCards from "../Components/SimpleCards";
+import StatsWithBrandIcon from "../Components/StatsWithBrandIcon";
+import ProjectList from "../Components/ProjectList";
 </script>
 
 <template>
@@ -13,8 +15,10 @@ import Welcome from '@/Jetstream/Welcome.vue';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
+                <div class="overflow-hidden">
+                    <stats-with-brand-icon />
+                    <simple-cards />
+                    <project-list />
                 </div>
             </div>
         </div>
