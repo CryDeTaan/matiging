@@ -12,12 +12,14 @@ import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
 
 const props = defineProps({
     user: Object,
+    userProfile: Object,
 });
 
 const form = useForm({
     _method: 'PUT',
-    name: props.user.name,
-    email: props.user.email,
+    name: props.userProfile.name,
+    email: props.userProfile.email,
+    id: props.userProfile.id,
     photo: null,
 });
 
@@ -147,6 +149,17 @@ const clearPhotoFileInput = () => {
                 />
                 <JetInputError :message="form.errors.email" class="mt-2" />
             </div>
+
+            <!-- User ID -->
+            <div class="hidden">
+                <input
+                    id="id"
+                    v-model="form.id"
+                    type="text"
+                />
+                <span>{{ form.id }}</span>
+            </div>
+
         </template>
 
         <template #actions>

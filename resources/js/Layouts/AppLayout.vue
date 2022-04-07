@@ -155,7 +155,7 @@ const logout = () => {
                                             Manage Account
                                         </div>
 
-                                        <JetDropdownLink :href="route('profile.show')">
+                                        <JetDropdownLink :href="route('profile.show', $page.props.user.id, $page.props.user.id)">
                                             Profile
                                         </JetDropdownLink>
 
@@ -231,7 +231,7 @@ const logout = () => {
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <JetResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
+                            <JetResponsiveNavLink :href="route('profile.show', $page.props.user.id)" :active="route().current('profile.show')">
                                 Profile
                             </JetResponsiveNavLink>
 
