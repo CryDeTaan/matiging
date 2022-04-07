@@ -23,6 +23,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\AddCookieOnSuccessfulLogin',
         ],
 
+        'Illuminate\Auth\Events\Logout' => [
+            'App\Listeners\RemoveCookieOnSuccessfulLogout',
+        ],
+
     ];
 
     /**
