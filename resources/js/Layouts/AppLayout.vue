@@ -8,10 +8,13 @@ import JetDropdown from '@/Jetstream/Dropdown.vue';
 import JetDropdownLink from '@/Jetstream/DropdownLink.vue';
 import JetNavLink from '@/Jetstream/NavLink.vue';
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue';
+import {getCookie} from "../helpers/getCookie";
 
 defineProps({
     title: String,
 });
+
+const isAdmin = !!getCookie('isAdmin');
 
 const showingNavigationDropdown = ref(false);
 
@@ -52,7 +55,7 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
-                                <JetNavLink :href="route('admin')" :active="route().current('admin')">
+                                <JetNavLink v-if="isAdmin" :href="route('admin')" :active="route().current('admin')">
                                     Admin
                                 </JetNavLink>
                             </div>
@@ -214,7 +217,7 @@ const logout = () => {
                         <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </JetResponsiveNavLink>
-                        <JetResponsiveNavLink :href="route('admin')" :active="route().current('admin')">
+                        <JetResponsiveNavLink v-if="isAdmin" :href="route('admin')" :active="route().current('admin')">
                             Admin
                         </JetResponsiveNavLink>
                     </div>
