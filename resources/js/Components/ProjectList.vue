@@ -135,9 +135,9 @@ const projects = [
     },
     {
         id: 2,
-        title: 'Component Design',
+        title: 'Continuous Integration',
         initials: 'CD',
-        team: 'User Experience',
+        team: 'DevOps',
         members: [
             {
                 name: 'Leonard Krasner',
@@ -171,9 +171,9 @@ const projects = [
     },
     {
         id: 3,
-        title: 'Templates',
-        initials: 'T',
-        team: 'Marketing',
+        title: 'Stock Launch',
+        initials: 'SL',
+        team: 'Finance',
         members: [
             {
                 name: 'Benjamin Russel',
@@ -207,8 +207,8 @@ const projects = [
     },
     {
         id: 4,
-        title: 'React Components',
-        initials: 'RA',
+        title: 'Serverless Functions',
+        initials: 'SF',
         team: 'Engineering',
         members: [
             {
