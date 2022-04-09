@@ -204,6 +204,7 @@ export default {
         StarIcon,
         ThumbUpIcon,
     },
+    props: ['messages'],
     setup() {
         return {
             tabs,

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -37,8 +38,10 @@ Route::middleware([
         return Inertia::render('Admin');
     })->middleware('isAdmin')->name('admin');
 
-    Route::get('/messages', function () {
-        return Inertia::render('Messages');
+    Route::get('/messages/{user}', function (User $user) {
+        return Inertia::render('Messages', [
+            'messages' => 'placeholder' // $user->messages() will be sent once prepared.
+        ]);
     })->name('messages');
 
 });

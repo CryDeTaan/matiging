@@ -87,7 +87,7 @@ const logout = () => {
                                             Messages
                                         </div>
 
-                                        <JetDropdownLink href="#">
+                                        <JetDropdownLink :href="route('messages', $page.props.user.id,)">
                                             My Messages
                                         </JetDropdownLink>
 
@@ -232,7 +232,7 @@ const logout = () => {
                                 Messages
                             </div>
 
-                            <JetResponsiveNavLink href="#">
+                            <JetResponsiveNavLink :href="route('messages', $page.props.user.id)" :active="route().current('messages')">
                                 My Messages
                             </JetResponsiveNavLink>
 
