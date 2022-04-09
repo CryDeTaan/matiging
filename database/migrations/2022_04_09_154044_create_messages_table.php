@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->foreignIdFor(User::class);
             $table->integer('likes');
             $table->integer('replies');
