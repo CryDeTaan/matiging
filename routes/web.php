@@ -36,6 +36,11 @@ Route::middleware([
     Route::get('/admin', function () {
         return Inertia::render('Admin');
     })->middleware('isAdmin')->name('admin');
+
+    Route::get('/messages', function () {
+        return Inertia::render('Messages');
+    })->name('messages');
+
 });
 
 require_once __DIR__ . '/jetstream.php';
