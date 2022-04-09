@@ -131,7 +131,7 @@ const logout = () => {
                                             Manage Account
                                         </div>
 
-                                        <JetDropdownLink :href="route('profile.show', $page.props.user.id, $page.props.user.id)">
+                                        <JetDropdownLink :href="route('profile.show', $page.props.user.id)">
                                             Profile
                                         </JetDropdownLink>
 
