@@ -22,5 +22,13 @@ class Message extends Model
         'views',
     ];
 
+    /**
+     * Get the user of the message.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 
 }
