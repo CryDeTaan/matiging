@@ -150,6 +150,18 @@ const clearPhotoFileInput = () => {
                 <JetInputError :message="form.errors.email" class="mt-2" />
             </div>
 
+            <!-- Role -->
+            <div v-if="userProfile.role" class="col-span-6 sm:col-span-4">
+                <JetLabel for="role" value="Role (read only)" />
+                <JetInput
+                    id="role"
+                    type="text"
+                    :value="userProfile.role"
+                    class="mt-1 block w-full disabled:bg-gray-100 disabled:text-gray-600"
+                    disabled
+                />
+            </div>
+
             <!-- User ID -->
             <div class="hidden">
                 <input
