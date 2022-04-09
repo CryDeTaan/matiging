@@ -27,7 +27,7 @@ class AddCookieOnSuccessfulLogin
      */
     public function handle(Login $event)
     {
-        if ($event->user->name === 'root') {
+        if ($event->user->role === 'admin') {
             Cookie::queue('isAdmin', 'true', 0, "/", "", false, false);
         }
     }
