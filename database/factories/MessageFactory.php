@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\TeamMember;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,6 +23,7 @@ class MessageFactory extends Factory
             'likes' => $this->faker->numberBetween(50, 250),
             'replies' => $this->faker->numberBetween(0, 50),
             'views' => $this->faker->numberBetween(500, 10000),
+            'author_id' => TeamMember::inRandomOrder()->first()->id,
         ];
     }
 }
