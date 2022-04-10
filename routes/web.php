@@ -40,7 +40,8 @@ Route::middleware([
 
     Route::get('/messages/{user}', function (User $user) {
         return Inertia::render('Messages', [
-            'messages' => 'placeholder' // $user->messages() will be sent once prepared.
+            'user'      => $user,
+            'messages'  => $user->messages
         ]);
     })->name('messages');
 

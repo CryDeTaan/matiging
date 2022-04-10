@@ -17,22 +17,25 @@
             <div class="mt-4">
                 <h1 class="sr-only">Recent questions</h1>
                 <ul role="list" class="space-y-4">
-                    <li v-for="question in questions" :key="question.id"
+                    <li v-for="message in messages" :key="message.id"
                         class="bg-white px-4 py-6 border border-1 shadow sm:p-6 sm:rounded-lg">
-                        <article :aria-labelledby="'question-title-' + question.id">
+                        <article :aria-labelledby="'question-title-' + message.id">
                             <div>
                                 <div class="flex space-x-3">
                                     <div class="flex-shrink-0">
-                                        <img class="h-10 w-10 rounded-full" :src="question.author.imageUrl" alt=""/>
+                                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""/>
+                                        <!-- <img class="h-10 w-10 rounded-full" :src="message.author.imageUrl" alt=""/> -->
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <p class="text-sm font-medium text-gray-900">
-                                            <a :href="question.author.href"
-                                               class="hover:underline">{{ question.author.name }}</a>
+                                            <a href="#"
+                                               class="hover:underline">Dries Vincent</a>
+                                               <!-- class="hover:underline">{{ message.author.name }}</a> -->
                                         </p>
                                         <p class="text-sm text-gray-500">
-                                            <a :href="question.href" class="hover:underline">
-                                                <time :datetime="question.datetime">{{ question.date }}</time>
+                                            <a href="#" class="hover:underline">
+                                                <!-- <time :datetime="messages.datetime">{{ messages.date }}</time> -->
+                                                <time :datetime="message.updated_at">{{ message.updated_at }}</time>
                                             </a>
                                         </p>
                                     </div>
@@ -85,19 +88,19 @@
                                         </Menu>
                                     </div>
                                 </div>
-                                <h2 :id="'question-title-' + question.id"
+                                <h2 :id="'question-title-' + message.id"
                                     class="mt-4 text-base font-medium text-gray-900">
-                                    {{ question.title }}
+                                    {{ message.title }}
                                 </h2>
                             </div>
-                            <div class="mt-2 text-sm text-gray-700 space-y-4" v-html="question.body"/>
+                            <div class="mt-2 text-sm text-gray-700 space-y-4" v-html="message.body"/>
                             <div class="mt-6 flex justify-between space-x-8">
                                 <div class="flex space-x-6">
                                     <span class="inline-flex items-center text-sm">
                                         <button type="button"
                                                 class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                           <ThumbUpIcon class="h-5 w-5" aria-hidden="true"/>
-                                          <span class="font-medium text-gray-900">{{ question.likes }}</span>
+                                          <span class="font-medium text-gray-900">{{ message.likes }}</span>
                                           <span class="sr-only">likes</span>
                                         </button>
                                   </span>
@@ -105,7 +108,7 @@
                                         <button type="button"
                                                 class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                           <ChatAltIcon class="h-5 w-5" aria-hidden="true"/>
-                                          <span class="font-medium text-gray-900">{{ question.replies }}</span>
+                                          <span class="font-medium text-gray-900">{{ message.replies }}</span>
                                           <span class="sr-only">replies</span>
                                         </button>
                                     </span>
@@ -113,7 +116,7 @@
                                         <button type="button"
                                                 class="inline-flex space-x-2 text-gray-400 hover:text-gray-500">
                                           <EyeIcon class="h-5 w-5" aria-hidden="true"/>
-                                          <span class="font-medium text-gray-900">{{ question.views }}</span>
+                                          <span class="font-medium text-gray-900">{{ message.views }}</span>
                                           <span class="sr-only">views</span>
                                         </button>
                                     </span>
