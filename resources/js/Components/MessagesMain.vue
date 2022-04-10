@@ -35,7 +35,7 @@
                                         <p class="text-sm text-gray-500">
                                             <a href="#" class="hover:underline">
                                                 <!-- <time :datetime="messages.datetime">{{ messages.date }}</time> -->
-                                                <time :datetime="message.updated_at">{{ message.updated_at }}</time>
+                                                <time :datetime="message.updated_at">{{ message.date_string }}</time>
                                             </a>
                                         </p>
                                     </div>
