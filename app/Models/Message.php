@@ -43,6 +43,14 @@ class Message extends Model
      */
     protected $appends = ['date_string'];
 
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['author'];
+
     /**
      * Get the user of the message.
      */
