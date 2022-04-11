@@ -23,14 +23,14 @@ class UsersSeeder extends Seeder
         ])->hasMessages(5)->create();
 
         User::factory([
-            'name'      => 'Christiaan',
-            'email'     => 'cdw@local',
-        ])->hasMessages(5)->create();
-
-        User::factory([
             'name'      => 'Finch',
             'email'     => 'finch@local',
             'role'      => 'finance',
+        ])->hasMessages(5)->create();
+
+        User::factory([
+            'name'      => 'Christiaan',
+            'email'     => 'cdw@local',
         ])->hasMessages(5)->create();
 
         User::factory(10)->hasMessages(5)->create();
