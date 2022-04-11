@@ -32,7 +32,7 @@ class TeamMemberFactory extends Factory
         $surname = $this->faker->lastName();
 
         return [
-            'name' => $name . $surname,
+            'name' => $name . ' ' . $surname,
             'handle' => $name,
             'image_url' => $imageUrl,
         ];
