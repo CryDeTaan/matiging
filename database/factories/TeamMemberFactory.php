@@ -28,9 +28,12 @@ class TeamMemberFactory extends Factory
 
         sleep(1);
 
+        $name = $this->faker->firstName();
+        $surname = $this->faker->lastName();
+
         return [
-            'name' => $this->faker->name(),
-            'handle' => $this->faker->domainWord(),
+            'name' => $name . $surname,
+            'handle' => $name,
             'image_url' => $imageUrl,
         ];
     }
