@@ -28,7 +28,9 @@
                                     <div class="min-w-0 flex-1">
                                         <p class="text-sm font-medium text-gray-900">
                                             <a href="#"
-                                                class="hover:underline">{{ message.author.name }}</a>
+                                                class="hover:underline">{{ message.author.name }}
+                                            </a>
+                                            <span class="text-gray-500">&nbsp sent you a message on:</span>
                                         </p>
                                         <p class="text-sm text-gray-500">
                                             <a href="#" class="hover:underline">
