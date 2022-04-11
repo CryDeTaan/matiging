@@ -44,6 +44,10 @@ Route::middleware([
         ]);
     })->name('messages');
 
+    Route::get('/finance', function () {
+        return Inertia::render('Finance');
+    })->middleware('isFinance')->name('finance');
+
 });
 
 require_once __DIR__ . '/jetstream.php';

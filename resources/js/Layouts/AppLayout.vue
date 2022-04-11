@@ -58,6 +58,9 @@ const logout = () => {
                                 <JetNavLink v-if="isAdmin" :href="route('admin')" :active="route().current('admin')">
                                     Admin
                                 </JetNavLink>
+                                <JetNavLink v-if="$page.props.user.role === 'finance'" :href="route('finance')" :active="route().current('finance')">
+                                    Finance
+                                </JetNavLink>
                             </div>
                         </div>
 
@@ -87,7 +90,7 @@ const logout = () => {
                                             Messages
                                         </div>
 
-                                        <JetDropdownLink :href="route('messages', $page.props.user.id,)">
+                                        <JetDropdownLink :href="route('messages', $page.props.user.id)">
                                             My Messages
                                         </JetDropdownLink>
 
@@ -189,6 +192,9 @@ const logout = () => {
                         </JetResponsiveNavLink>
                         <JetResponsiveNavLink v-if="isAdmin" :href="route('admin')" :active="route().current('admin')">
                             Admin
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink v-if="$page.props.user.role === 'finance'" :href="route('finance')" :active="route().current('finance')">
+                            Finance
                         </JetResponsiveNavLink>
                     </div>
 
