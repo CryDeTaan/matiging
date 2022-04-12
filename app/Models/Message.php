@@ -49,7 +49,7 @@ class Message extends Model
      *
      * @var array
      */
-    protected $with = ['author'];
+    protected $with = ['author', 'user'];
 
     /**
      * Get the user of the message.

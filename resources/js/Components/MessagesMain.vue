@@ -30,7 +30,7 @@
                                             <a href="#"
                                                 class="hover:underline">{{ message.author.name }}
                                             </a>
-                                            <span class="text-gray-500">&nbsp sent you a message on:</span>
+                                            <span class="text-gray-500">&nbspsent a message to <span class="font-bold">{{ message.user.name }}</span> on:</span>
                                         </p>
                                         <p class="text-sm text-gray-500">
                                             <a href="#" class="hover:underline">
