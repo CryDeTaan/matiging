@@ -21,20 +21,15 @@ class UserProfileController extends Controller
     /**
      * Show the general profile settings screen.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  $id
      * @return \Inertia\Response
      */
-    public function show(User $user, Request $request)
+    public function show($id)
     {
-        // #requestUri: "/user/1"
-        $id = explode('/', $request->getRequestUri());
-        $userProfile = User::find($id[2]);
+        $userProfile = User::find($id);
 
-        $this->validateTwoFactorAuthenticationState($request);
-
-        return Jetstream::inertia()->render($request, 'Profile/Show', [
-            'confirmsTwoFactorAuthentication' => Features::optionEnabled(Features::twoFactorAuthentication(), 'confirm'),
-            'sessions' => $this->sessions($request)->all(),
+        return Jetstream::inertia()->render(request(), 'Profile/Show', [
+            'sessions' => $this->sessions(request())->all(),
             'userProfile' => $userProfile,
         ]);
     }
